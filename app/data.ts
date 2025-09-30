@@ -5,6 +5,9 @@ export const products = [
         image: "/product1.png",
         price: 53194,
         discount: 48,
+        stock: 0,
+        description: "",
+        colors: [],
     },
     {
         id: "",
@@ -12,6 +15,9 @@ export const products = [
         image: "/product2.png",
         price: 50000,
         discount: 15,
+        stock: 3,
+        description: "",
+        colors: [],
     },
     {
         id: "",
@@ -19,6 +25,9 @@ export const products = [
         image: "/product3.png",
         price: 75000,
         discount: 25,
+        stock: 8,
+        description: "",
+        colors: [],
     },
     {
         id: "",
@@ -26,6 +35,9 @@ export const products = [
         image: "/product4.png",
         price: 67900,
         discount: 10,
+        stock: 4,
+        description: "",
+        colors: [],
     },
     {
         id: "",
@@ -33,6 +45,9 @@ export const products = [
         image: "/product5.png",
         price: 14899,
         discount: 0,
+        stock: 1000,
+        description: "",
+        colors: [],
     },
     {
         id: "gamepad",
@@ -41,7 +56,6 @@ export const products = [
         price: 192,
         discount: 0,
         rating: 4,
-        inStock: true,
         description: "PlayStation 5 Controller Skin High Quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive",
         colors: ["#A0BCE0", "#DB4444"],
         sizes: ["XS", "S", "M", "L", "XL"],
