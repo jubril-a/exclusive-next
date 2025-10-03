@@ -1,8 +1,8 @@
-// import {createClient} from '@sanity/client'
+import { createClient } from "next-sanity";
 
-// export const client = createClient({
-//   projectId: 'afk7aj61',
-//   dataset: 'production',
-//   useCdn: true, // set to `false` to bypass the edge cache
-//   apiVersion: 'v2025-07-21',
-// })
+export const client = createClient({
+  projectId: "afk7aj61",
+  dataset: "production",
+  apiVersion: "v2025-07-21",
+  useCdn: false,
+});

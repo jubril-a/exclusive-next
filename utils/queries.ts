@@ -17,3 +17,5 @@ export const BestSellingQuery = `
         "image": productImage.asset->url,
         desc}
 }`;
+
+export const categoryQuery = `*[_type == "category"]{category, "img": icon.asset->url}`

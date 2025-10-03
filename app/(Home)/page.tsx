@@ -6,7 +6,6 @@ import SpecialProduct from "./sections/SpecialProduct"
 import Perks from "./sections/Perks"
 import Footer from "./sections/Footer"
 
-
 const Home = () => {
 
   return (
