@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
+import Footer from "./(Home)/sections/Footer";
 
 export const metadata: Metadata = {
   title: "Exclusive",
@@ -21,8 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        {children}
+          <div className="flex flex-col min-h-[100vh]">
+            <Navbar />
+            {children}
+          </div>
+          <Footer />
       </body>
     </html>
   );

@@ -1,44 +1,45 @@
-"use client"
-
-import SectionHeading from "./SectionHeading"
-import Section from "./Section"
-import ProductCard from "./ProductCard"
-import { products } from "@/app/data"
-import { useRef } from "react"
-import { scrollerContext } from "@/app/scrollerContext"
+import { client } from "@/utils/sanityClient"
+import ScrollerClient from "./ScrollerClient"
 
 type Props = {
+  type: 'category' | 'special',
   heading: string,
   subheading: string,
+  category: string,
 }
 
-const ProductScroller = ({ heading, subheading }: Props) => {
+export default async function ProductScroller({ type, heading, subheading, category }: Props) {
 
-  const scrollerRef = useRef<HTMLDivElement>(null)
+  let query = ""
 
-  const data = products
+  switch (type) {
+    case 'category':
+      query = `
+        *[_type == "product" && category->slug.current == "${category}"]{
+          _id,
+          productName,
+          price,
+          discount,
+          "imageUrl": productImage.asset->url,
+        }`
+       break;
 
-  return (
-    <scrollerContext.Provider value={scrollerRef}>
-      <Section>
-        <SectionHeading subheading={subheading} heading={heading} />
-        <div ref={scrollerRef} className="flex gap-4 overflow-scroll scrollbar-hidden">
-          {data.map((product: {name: string, image: string, price: number, discount: number}) => (
-            <ProductCard
-              key={product.name}
-              imgUrl={product.image}
-              imgDescription={product.name}
-              name={product.name}
-              price={product.price}
-              isDiscounted={true}
-              discount={product.discount}
-          />
-          ))}
-        </div>
-      </Section>
-    </scrollerContext.Provider>
-  )
+    case 'special':
+      query = `
+        *[_type == "${category}"]{
+          ...productReference->{
+          productName,
+          price,
+          discount,
+          "imageUrl": productImage.asset->url,
+          desc}
+        }`
+       break;
+  }
+
+
+  const data = await client.fetch(query)
+
+  return <ScrollerClient heading={heading} subheading={subheading} data={data} />
 }
-
-export default ProductScroller
 

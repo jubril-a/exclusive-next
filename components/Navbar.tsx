@@ -8,23 +8,32 @@ import {
     Bars3Icon
 } from "@heroicons/react/24/outline"
 import Constraint from "./Constraint";
+import { cn } from "@/utils/cn";
 
 type Props = {
     children: React.ReactNode;
-    href: string
+    href: string;
+    className?: string;
+    handleClick?: (e:React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
-const Navlink = ({children, href}: Props) => {
+const Navlink = ({children, href, className, handleClick}: Props) => {
     return (
-        <a href={href} className="text-sm max-[840px]:p-4 border-b border-[#ffffff30] last:border-0">{children}</a>
+        <a href={href} className={cn("text-sm max-[840px]:p-4 border-b border-[#ffffff30] last:border-0 hover:text-btn-1", className)} onClick={handleClick}>{children}</a>
     )
 }
 
 const Navbar = () => {
     const [navbarVisible, setNavbarVisible] = useState<boolean>(false)
+    const [accountVisible, setAccountVisible] = useState<boolean>(false)
+
+    function displayAccountBox(e: React.MouseEvent<HTMLAnchorElement>) {
+        e.preventDefault()
+        setAccountVisible(!accountVisible)
+    }
 
   return (
-    <div className="border-b border-b-[#c6c6c648]">
+    <div className="border-b border-b-[#c6c6c648] sticky top-0 z-100 bg-white">
         <div className="bg-black p-2">
             <p className="text-[#FAFAFA] text-center text-sm">Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!  <a className="underline text-white font-semibold" href="">Shop Now</a></p>
         </div>
@@ -33,9 +42,15 @@ const Navbar = () => {
                 <div className="flex items-center grow gap-4 justify-between">
                     <span className="text-3xl font-bold text-primary tracking-tighter">Exclusive</span>
                     <div className={"flex min-[840px]:gap-4 " + `${navbarVisible ? "max-[840px]:grid max-[840px]:absolute max-[840px]:bg-black max-[840px]:text-white max-[840px]:top-[111px] max-[840px]:right-0 max-[840px]:left-0 max-[840px]:px-12 max-[840px]:py-8" : "max-[840px]:hidden"}`}>
-                        <Navlink href="">Home</Navlink>
+                        <Navlink href="/">Home</Navlink>
                         <Navlink href="/contact">Contact</Navlink>
-                        <Navlink href="">Account</Navlink>
+                        <div className="relative flex items-center">
+                            <Navlink href="" handleClick={displayAccountBox}>Account</Navlink>
+                            {accountVisible && <div className="grid absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-btn-1 text-white p-6">
+                                <Navlink className="bg-dark py-4 px-8 hover:bg-btn-2 hover:text-white rounded-xl mb-2" href="/signup">Sign&nbsp;Up</Navlink>
+                                <Navlink className="bg-dark py-4 px-8 hover:bg-btn-2 hover:text-white rounded-xl" href="/login">Log&nbsp;In</Navlink>
+                            </div>}
+                        </div>
                     </div>
                 </div>
                 <div className="flex items-center gap-1 min-[400px]:gap-4">

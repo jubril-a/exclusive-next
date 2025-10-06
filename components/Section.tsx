@@ -10,7 +10,7 @@ type Props = {
 const Section = ({className, children}:Props) => {
   return (
     <Constraint>
-      <section className={cn("my-20", className)}>
+      <section className={cn("mt-20", className)}>
         {children}
       </section>
     </Constraint>

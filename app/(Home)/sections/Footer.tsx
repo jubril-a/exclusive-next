@@ -2,7 +2,7 @@ import Constraint from "@/components/Constraint"
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-gray-50 text-sm">
+    <footer className="bg-dark text-gray-50 text-sm mt-20">
         <Constraint className="w-fit flex mx-auto gap-x-12 gap-y-8 flex-wrap py-12">
             <div>
                 <h2 className="mb-4 text-white text-2xl font-semibold">Exclusive</h2>
