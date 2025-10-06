@@ -7,7 +7,7 @@ const page = () => {
   return (
     <>
       <ProductDisplay id="gamepad" />
-      <ProductScroller heading="You Might Also Like" subheading={"Related Items"} />
+      <ProductScroller type="special" heading="You Might Also Like" subheading={"Related Items"} category="bestSelling"  />
       <Footer />
     </>
   )
