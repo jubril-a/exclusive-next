@@ -1,5 +1,4 @@
 import Section from "@/components/Section"
-import { products } from "@/app/data"
 import ProductInfo from "./ProductInfo"
 import Action from "./Action"
 import Perks from "./Perks"
@@ -22,7 +21,7 @@ const ProductDisplay = ({ productName, imageUrl, price, discount, product_desc, 
            <img src={imageUrl} alt={productName} />
         </div>
         <div className="py-6">
-            <ProductInfo name={productName} stock={stock} price={price} description={product_desc} colors={colors} />
+            <ProductInfo name={productName} stock={stock} price={price} description={product_desc} colors={colors} discount={discount} />
             <Action stock={stock}/>
             <Perks />
         </div>
