@@ -28,6 +28,7 @@ export default async function ProductScroller({ type, heading, subheading, categ
       query = `
         *[_type == "${category}"]{
           ...productReference->{
+          _id,
           productName,
           price,
           discount,

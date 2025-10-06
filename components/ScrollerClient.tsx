@@ -12,6 +12,14 @@ type Props = {
   data: any,
 }
 
+type ProductType = {
+  _id: string,
+  productName: string,
+  imageUrl: string,
+  price: number,
+  discount: number
+}
+
 const ScrollerClient = ({ heading, subheading, data }:Props) => {
 
   const scrollerRef = useRef<HTMLDivElement>(null)
@@ -21,7 +29,7 @@ const ScrollerClient = ({ heading, subheading, data }:Props) => {
       <Section>
         <SectionHeading subheading={subheading} heading={heading} />
         <div ref={scrollerRef} className="flex gap-4 overflow-scroll scrollbar-hidden">
-          {data.map((product: {productName: string, imageUrl: string, price: number, discount: number}) => (
+          {data.map((product: ProductType) => (
             <ProductCard
               key={product.productName}
               imgUrl={product.imageUrl}
@@ -30,6 +38,7 @@ const ScrollerClient = ({ heading, subheading, data }:Props) => {
               price={product.price}
               isDiscounted={true}
               discount={product.discount}
+              productId={product._id}
           />
           ))}
         </div>

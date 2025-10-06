@@ -1,6 +1,6 @@
 import ProductDisplay from "./components/ProductDisplay"
 import ProductScroller from "@/components/ProductScroller"
-import Footer from "../(Home)/sections/Footer"
+import Footer from "../../../../components/Footer"
 
 const page = () => {
 
