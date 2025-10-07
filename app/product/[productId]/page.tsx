@@ -12,6 +12,7 @@ export default async function page({ params }: { params: {productId: string}}) {
       "imageUrl": productImage.asset->url,
       desc,
       stock,
+      "categorySlug": category->slug.current
   }`
 
   const productData = await client.fetch(query)
