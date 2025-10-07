@@ -1,6 +1,7 @@
 import { client } from "@/utils/sanityClient"
-import { categoryQuery } from "@/utils/queries"
 import CategoriesClient from "./CategoriesClient"
+
+const categoryQuery = `*[_type == "category"]{"slug": slug.current, category, "img": icon.asset->url}`
 
 export default async function Categories() {
     const categories = await client.fetch(categoryQuery)

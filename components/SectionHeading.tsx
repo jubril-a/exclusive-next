@@ -2,12 +2,13 @@ import { RefObject } from "react"
 import ScrollBtns from "./ScrollBtns"
 
 type Props = {
+    id?: string,
     heading?: string,
     subheading: string,
     showBtns?: boolean
 }
 
-const SectionHeading = ({heading="", subheading, showBtns=true}: Props) => {
+const SectionHeading = ({id, heading="", subheading, showBtns=true}: Props) => {
 
   return (
     <div className="mb-8">
@@ -16,7 +17,7 @@ const SectionHeading = ({heading="", subheading, showBtns=true}: Props) => {
             <h3>{subheading}</h3>
         </div>
         <div className="flex justify-between items-center">
-          <h2 className="text-3xl md:text-4xl font-semibold">{heading}</h2>
+          <h2 id={id} className="text-3xl md:text-4xl font-semibold">{heading}</h2>
           {showBtns && <ScrollBtns />}
         </div>
     </div>

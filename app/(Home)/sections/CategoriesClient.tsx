@@ -7,6 +7,7 @@ import { scrollerContext } from "@/app/scrollerContext"
 import { useRef } from "react"
 
 type Category = {
+    slug: string,
     category: string,
     img: string
 }
@@ -19,7 +20,7 @@ export default function CategoriesClient({categories}: {categories: Category[]})
       <Section>
         <SectionHeading subheading="Categories" heading="Browse by Category" />
           <div ref={scrollerRef} className="flex gap-4 overflow-scroll scrollbar-hidden">
-              {categories.map((catg:{category: string, img: string}) => <CategoryBox key={catg.category} imgUrl={catg.img} category={catg.category} />)}
+              {categories.map((catg:{slug: string, category: string, img: string}) => <CategoryBox id={catg.slug} key={catg.category} imgUrl={catg.img} category={catg.category} />)}
           </div>
       </Section>
     </scrollerContext.Provider>

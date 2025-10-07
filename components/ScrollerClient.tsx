@@ -7,6 +7,7 @@ import { useRef } from "react"
 import { scrollerContext } from "@/app/scrollerContext"
 
 type Props = {
+  categoryId: string,
   heading: string,
   subheading: string,
   data: any,
@@ -20,13 +21,13 @@ type ProductType = {
   discount: number
 }
 
-const ScrollerClient = ({ heading, subheading, data }:Props) => {
+const ScrollerClient = ({ categoryId, heading, subheading, data }:Props) => {
 
   const scrollerRef = useRef<HTMLDivElement>(null)
 
   return (
     <scrollerContext.Provider value={scrollerRef}>
-      <Section>
+      <Section id={categoryId}>
         <SectionHeading subheading={subheading} heading={heading} />
         <div ref={scrollerRef} className="flex gap-4 overflow-scroll scrollbar-hidden">
           {data.map((product: ProductType) => (

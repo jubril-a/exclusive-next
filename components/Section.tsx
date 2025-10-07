@@ -3,14 +3,15 @@ import Constraint from "./Constraint"
 import { cn } from "@/utils/cn"
 
 type Props = {
+    id?: string,
     children: React.ReactNode,
     className?: string
 }
 
-const Section = ({className, children}:Props) => {
+const Section = ({id, className, children}:Props) => {
   return (
     <Constraint>
-      <section className={cn("mt-20", className)}>
+      <section id={id} className={cn("mt-20", className)}>
         {children}
       </section>
     </Constraint>

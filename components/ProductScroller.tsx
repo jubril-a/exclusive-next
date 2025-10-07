@@ -41,6 +41,6 @@ export default async function ProductScroller({ type, heading, subheading, categ
 
   const data = await client.fetch(query)
 
-  return <ScrollerClient heading={heading} subheading={subheading} data={data} />
+  return <ScrollerClient categoryId={category} heading={heading} subheading={subheading} data={data} />
 }
 

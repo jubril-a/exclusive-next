@@ -10,7 +10,6 @@ type Props = {
     discount: number,
     product_desc: string,
     stock: number,
-    colors: string[],
   }
 }
 
