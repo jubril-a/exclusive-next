@@ -7,9 +7,9 @@ const SearchForm = () => {
     const inputRef = useRef<HTMLInputElement>(null)
 
     useEffect(() => {
-        inputRef.current?.focus()
 
         if (searchVisible) {
+            inputRef.current?.focus()
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = 'scroll';
