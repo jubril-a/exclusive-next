@@ -1,4 +1,4 @@
-import FormInput from "../components/FormInput"
+import FormInput from "../../../components/FormInput"
 
 const page = () => {
 

@@ -3,7 +3,7 @@ import Section from "@/components/Section"
 const Perks = () => {
   return (
     <Section>
-        <div className="grid min-[640px]:grid-cols-3 gap-2">
+        <div className="grid min-[640px]:grid-cols-3 gap-2 mb-20">
             <div>
                 <div className="rounded-full bg-gray-200 w-fit p-2 mx-auto mb-5">
                     <div className="grid justify-center content-center w-[56px] h-[56px] rounded-full bg-gray-900">
