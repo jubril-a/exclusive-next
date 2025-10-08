@@ -19,7 +19,6 @@ export default function ProductClient({ data }: Props) {
     <>
         <ProductDisplay {...data} />
         <ProductScroller type="category" heading="You Might Also Like" subheading={"Related Items"} category={data.categorySlug}  />
-        <Footer />
     </>
   )
 }

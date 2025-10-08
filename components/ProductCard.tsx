@@ -1,3 +1,5 @@
+'use client'
+
 import { HeartIcon, ShoppingCartIcon } from "@heroicons/react/24/outline"
 import { useState } from "react"
 import { cn } from "@/utils/cn"
@@ -26,7 +28,7 @@ const ProductCard = ({imgUrl, imgDescription, name, price, isDiscounted, discoun
   }
 
   return (
-    <div className="relative border border-gray-200 p-2 pb-4 rounded-lg">
+    <div className="relative border border-gray-200 p-2 pb-4 rounded-lg w-fit">
       <a className="absolute inset-0 z-2" href={`/product/${productId}`}></a>
       <div className="relative flex justify-center rounded-lg items-center w-60 h-60 bg-gray-200">
           {discount != 0 && <span className="absolute top-2 left-2 bg-btn-2 text-white px-2 py-1 rounded-md inline-block text-sm">-{discount}%</span>}
@@ -52,7 +54,7 @@ const ProductCard = ({imgUrl, imgDescription, name, price, isDiscounted, discoun
           </div>
           <img src={imgUrl} alt={imgDescription} />
       </div>
-      <div>
+      <div className="w-60">
           <h4 className="font-medium my-2 line-clamp-1">{name}</h4>
           <div className="flex gap-4">
             <span className="text-btn-2">₦{(price - (price * (discount / 100))).toLocaleString('en-US')}</span>
