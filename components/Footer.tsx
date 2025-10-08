@@ -2,7 +2,7 @@ import Constraint from "@/components/Constraint"
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-gray-50 text-sm mt-20">
+    <footer className="bg-dark text-gray-50 text-sm">
         <Constraint className="w-fit flex mx-auto gap-x-12 gap-y-8 flex-wrap py-12">
             <div>
                 <h2 className="mb-4 text-white text-2xl font-semibold">Exclusive</h2>
@@ -16,11 +16,11 @@ const Footer = () => {
             </div>
             <div>
                 <h3 className="mb-4 text-base text-white">Account</h3>
-                <a className="block mb-3" href="">My Account</a>
-                <a className="block mb-3" href="">Login / Register</a>
+                <a className="block mb-3" href="/login">Login</a>
+                <a className="block mb-3" href="/signup">Register</a>
+                <a className="block mb-3" href="/reset-password">Reset Password</a>
                 <a className="block mb-3" href="">Cart</a>
                 <a className="block mb-3" href="">Wishlist</a>
-                <a className="block mb-3" href="">Shop</a>
             </div>
             <div>
                 <h3 className="mb-4 text-base text-white">Quick Link</h3>

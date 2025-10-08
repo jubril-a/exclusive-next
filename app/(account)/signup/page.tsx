@@ -3,7 +3,7 @@ import FormInput from "../components/FormInput"
 const page = () => {
   return (
     <div>
-      <h1 className="relative mb-10 w-fit text-3xl md:text-4xl font-semibold before:w-[70%] before:mt-1 before:h-1 before:absolute before:top-full before:bg-btn-2">Register</h1>
+      <h1 className="relative mb-10 w-fit text-3xl md:text-4xl font-semibold before:w-[76px] before:mt-1 before:h-1 before:absolute before:top-full before:bg-btn-2">Register</h1>
       <form className="grid gap-6 max-w-80">
         <FormInput name="email" type="email" label="Email" />
         <FormInput name="password" type="password" label="Password" />

@@ -49,8 +49,9 @@ const Navbar = () => {
                         <div className="relative flex items-center">
                             <Navlink href="" handleClick={displayAccountBox}>Account</Navlink>
                             {accountVisible && <div className="grid absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-btn-1 text-white p-6">
-                                <Navlink className="bg-dark py-4 px-8 hover:bg-btn-2 hover:text-white rounded-xl mb-2" href="/signup">Sign&nbsp;Up</Navlink>
-                                <Navlink className="bg-dark py-4 px-8 hover:bg-btn-2 hover:text-white rounded-xl" href="/login">Log&nbsp;In</Navlink>
+                                <Navlink className="bg-dark py-4 px-8 text-center hover:bg-btn-2 hover:text-white rounded-xl" href="/signup">Sign&nbsp;Up</Navlink>
+                                <Navlink className="bg-dark py-4 px-8 text-center hover:bg-btn-2 hover:text-white rounded-xl my-2" href="/login">Log&nbsp;In</Navlink>
+                                 <Navlink className="bg-dark py-4 px-8 text-center hover:bg-btn-2 hover:text-white rounded-xl" href="/reset-password">Forgot&nbsp;Password</Navlink>
                             </div>}
                         </div>
                     </div>
