@@ -10,7 +10,7 @@ const Perks = () => {
                         <img src="/icons/delivery.png" className="invert" alt="" />
                     </div>
                 </div>
-                <h3 className="text-center text-lg font-semibold  mb-1">FREE AND FAST DELIVERY</h3>
+                <h3 className="text-center text-lg font-semibold text-gray-900 mb-1">FREE AND FAST DELIVERY</h3>
                 <p className="text-center text-sm text-gray-600">Free delivery for all orders over $140</p>
             </div>
             <div>
@@ -19,7 +19,7 @@ const Perks = () => {
                         <img src="/icons/support.png" className="invert" alt="" />
                     </div>
                 </div>
-                <h3 className="text-center text-lg font-semibold  mb-1">24/7 CUSTOMER SERVICE</h3>
+                <h3 className="text-center text-lg font-semibold text-gray-900 mb-1">24/7 CUSTOMER SERVICE</h3>
                 <p className="text-center text-sm text-gray-600">Friendly 24/7 customer support</p>
             </div>
             <div>
@@ -28,7 +28,7 @@ const Perks = () => {
                         <img src="/icons/security.png" className="invert" alt="" />
                     </div>
                 </div>
-                <h3 className="text-center text-lg font-semibold  mb-1">MONEY BACK GUARANTEE</h3>
+                <h3 className="text-center text-lg font-semibold text-gray-900 mb-1">MONEY BACK GUARANTEE</h3>
                 <p className="text-center text-sm text-gray-600">We reurn money within 30 days</p>
             </div>
         </div>

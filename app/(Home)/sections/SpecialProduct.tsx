@@ -10,7 +10,7 @@ const SpecialProduct = () => {
           <div>
             <h2>Special Offer: <span className="text-btn-1">JBL Speaker</span></h2>
             <h3 className="text-5xl font-semibold my-6 leading-14 max-w-[392px]">Enhance Your Music Experience</h3>
-            <a href="" className="flex gap-1">
+            <a href="/product/2555156e-2274-4955-af76-3cab87e8d290" className="flex gap-1">
               <span className="border-b border-white">Shop Now</span>
               <ArrowRightIcon className="size-5"/>
             </a>

@@ -55,7 +55,7 @@ const ProductCard = ({imgUrl, imgDescription, name, price, isDiscounted, discoun
           <img src={imgUrl} alt={imgDescription} />
       </div>
       <div className="w-60">
-          <h4 className="font-medium my-2 line-clamp-1">{name}</h4>
+          <h4 className="font-medium my-2 line-clamp-1 text-gray-900">{name}</h4>
           <div className="flex gap-4">
             <span className="text-btn-2">₦{(price - (price * (discount / 100))).toLocaleString('en-US')}</span>
             {discount != 0 && <span className="text-gray-300 line-through">₦{price}</span>}

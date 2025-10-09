@@ -34,7 +34,7 @@ export default function HeroClient({categories}:{categories: Category[]}) {
           <h2 className="bg-dark text-white min-[640px]:hidden font-semibold mb-4 border border-[#c6c6c648] p-4 cursor-pointer" onClick={() => (setCategoryVisible(!categoryVisible))}>Categories</h2>
           <ul className={categoryVisible ? "block max-[640px]:mx-4" : "max-[640px]:hidden"}>
             {categories.map((catg:{slug: string, category:string}) => (
-              <li key={catg.category} className="text-sm pb-4"><a onClick={(e) => handleClick(e, catg.slug)} href={`#${catg.slug}`}>{catg.category}</a></li>
+              <li key={catg.category} className="text-sm pb-4 text-gray-800"><a onClick={(e) => handleClick(e, catg.slug)} href={`#${catg.slug}`}>{catg.category}</a></li>
             ))}
           </ul>
         </div>
@@ -43,7 +43,7 @@ export default function HeroClient({categories}:{categories: Category[]}) {
           <div>
             <h2>iPhone 14 series</h2>
             <h1 className="text-5xl font-semibold my-6 leading-14">Up to 10% off Voucher</h1>
-            <a href="" className="flex gap-1">
+            <a href="/product/ed661682-049a-4334-ac41-4c300b211b5d" className="flex gap-1">
               <span className="border-b border-white">Shop Now</span>
               <ArrowRightIcon className="size-5"/>
             </a>
