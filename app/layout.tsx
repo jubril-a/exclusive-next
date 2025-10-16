@@ -19,6 +19,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  // const { data, error } = await supabase.auth.signInAnonymously()
+
   return (
     <html lang="en">
       <body className={inter.className}>

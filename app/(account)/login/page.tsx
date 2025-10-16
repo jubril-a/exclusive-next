@@ -1,5 +1,6 @@
 import FormInput from "@/components/FormInput"
 import ToggleButton from "../components/ToggleButton"
+import { login } from "../actions"
 
 const page = () => {
 
@@ -10,7 +11,7 @@ const page = () => {
         <FormInput name="email" type="email" label="Email" />
         <FormInput name="password" type="password" label="Password" />
         <ToggleButton />
-        <input className="bg-btn-1 rounded-md hover:bg-btn-2 hover:text-white mb-8 py-3 cursor-pointer" type="submit" value="Log In" />  
+        <input formAction={login} className="bg-btn-1 rounded-md hover:bg-btn-2 hover:text-white mb-8 py-3 cursor-pointer" type="submit" value="Log In" />  
       </form>
       <p className="text-gray-700 text-[14px]">Forgot your password?
         <a className="text-btn-2 hover:text-btn-3" href="/reset-password"> Reset it</a>

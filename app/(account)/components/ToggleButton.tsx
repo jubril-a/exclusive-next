@@ -1,18 +1,15 @@
-'use client'
-
-import { useState } from "react"
-import { cn } from "@/utils/cn"
-
 const ToggleButton = () => {
-    const [toggleState, setToggleState] = useState(false)
 
   return (
-    <div className="flex gap-2" onClick={() => setToggleState(!toggleState)}>
-        <div className={cn("w-10 h-6 p-0.5 bg-gray-500 rounded-2xl", toggleState && "bg-btn-1 flex justify-end")}>
+    <>
+      <label className="flex gap-2">
+        <input type="checkbox" name="remember" id="remember" className="peer hidden" />
+        <div className="w-10 h-6 p-0.5 bg-gray-500 rounded-2xl peer-checked:bg-btn-1 peer-checked:flex peer-checked:justify-end">
             <div className="h-full aspect-square bg-white rounded-full"></div>
         </div>
         <span>Remember me</span>
-    </div>
+      </label>
+    </>
   )
 }
 

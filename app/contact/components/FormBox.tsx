@@ -2,7 +2,7 @@ import FormInput from "@/components/FormInput"
 
 const FormBox = () => {
   return (
-    <form className="flex-grow">
+    <form action="https://formspree.io/f/mvgwwrpn" method="POST" className="flex-grow">
         <div className="flex max-[640px]:flex-col gap-4 mb-4">
             <FormInput className="flex-grow" name="name" type="text" label="Your Name" />
             <FormInput className="flex-grow" name="email" type="email" label="Your Email" />
