@@ -39,7 +39,7 @@ export default function HeroClient({categories}:{categories: Category[]}) {
           </ul>
         </div>
         
-        <div className="min-[1080px]:flex bg-black text-white min-[640px]:ml-8 mt-8 grow px-8 min-[640px]:px-16 pt-16 justify-between">
+        <div className="min-[1080px]:flex bg-black text-white min-[640px]:ml-8 mt-4 min-[640px]:mt-8 grow px-8 min-[640px]:px-16 pt-16 justify-between">
           <div>
             <h2>iPhone 14 series</h2>
             <h1 className="text-5xl font-semibold my-6 leading-14">Up to 10% off Voucher</h1>

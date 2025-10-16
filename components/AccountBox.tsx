@@ -2,7 +2,7 @@ import Navlink from "./Navlink";
 
 export const LoggedOut = () => {
   return (
-    <div className="grid absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-btn-1 text-white p-6 rounded-md">
+    <div className="grid absolute top-full mt-3 max-[1200px]:right-0 min-[1200px]:left-1/2 min-[1200px]:-translate-x-1/2 bg-btn-1 text-white p-6 rounded-md">
         <Navlink className="bg-dark py-4 px-8 text-center hover:bg-btn-2 hover:text-white rounded-xl" href="/signup">Sign&nbsp;Up</Navlink>
         <Navlink className="bg-dark py-4 px-8 text-center hover:bg-btn-2 hover:text-white rounded-xl my-2" href="/login">Log&nbsp;In</Navlink>
         <Navlink className="bg-dark py-4 px-8 text-center hover:bg-btn-2 hover:text-white rounded-xl" href="/reset-password">Forgot&nbsp;Password</Navlink>
@@ -12,8 +12,9 @@ export const LoggedOut = () => {
 
 export const LoggedIn = () => {
   return (
-    <div className="grid absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-[rgba(0,0,0,0.4)] text-white p-6 backdrop-blur-2xl border border-[rgba(255,255,255,0.4)] rounded-md">
+    <div className="grid absolute top-full mt-3 max-[1200px]:right-0 min-[1200px]:left-1/2 min-[1200px]:-translate-x-1/2 bg-[rgba(0,0,0,0.4)] text-white p-6 backdrop-blur-2xl border border-[rgba(255,255,255,0.4)] rounded-md">
         <Navlink className="px-2 pb-3" href="/account/manage">Manage&nbsp;my&nbsp;Account</Navlink>
+        <Navlink className="min-[400px]:hidden px-2 py-3" href="/account/cart">My&nbsp;Cart</Navlink>
         <Navlink className="px-2 py-3" href="/account/orders">My&nbsp;Orders</Navlink>
         <Navlink className="px-2 py-3" href="/account/wishlist">Wishlist</Navlink>
         <Navlink className="px-2 py-3" href="/account/">Logout</Navlink>

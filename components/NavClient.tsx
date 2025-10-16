@@ -24,10 +24,10 @@ export const NavClient = () => {
                 <Navlink href="/help">Help Center</Navlink>
             </div>
         </div>
-        <div className="flex items-center ml-8 gap-1 min-[400px]:gap-4">
+        <div className="flex items-center ml-8 min-[400px]:gap-4">
             <SearchForm />
-            <Navlink href="/account/cart" className="cursor-pointer"><ShoppingCartIcon className="max-[400px]:hidden size-6" /></Navlink>
-            <button className="mr-3 cursor-pointer" onClick={() => (setNavbarVisible(!navbarVisible))}>
+            <Navlink href="/account/cart" className="max-[400px]:hidden cursor-pointer max-[920px]:p-0"><ShoppingCartIcon className="size-6" /></Navlink>
+            <button className="mr-3 max-[400px]:ml-3 cursor-pointer" onClick={() => (setNavbarVisible(!navbarVisible))}>
                 {navbarVisible ? <XMarkIcon className="min-[920px]:hidden size-8" /> : <Bars3Icon className="min-[920px]:hidden size-8" />}
             </button>
         </div>
