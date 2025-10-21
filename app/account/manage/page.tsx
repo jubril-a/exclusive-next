@@ -1,7 +1,8 @@
+import Manage from "./components/Manage"
+
 const page = () => {
-  return (
-    <div>MANAGE</div>
-  )
+
+  return <Manage />
 }
 
 export default page
