@@ -14,7 +14,7 @@ type DataType = {
 const DisplayClient = ({ userData }: {userData: DataType}) => {
 
   return (
-    <div className="bg-gray-50 py-20">
+    <div className="bg-gray-50 py-10 min-[1000px]:py-20">
         <Constraint size="960px">
             <div>
                 <h1 className="mb-5 font-semibold text-xl">Account Overview</h1>

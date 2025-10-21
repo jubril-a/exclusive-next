@@ -3,10 +3,11 @@
 import { createClient } from "@/utils/supabase/client"
 import FormInput from "@/components/FormInput"
 import Constraint from "@/components/Constraint"
-import { MouseEvent } from "react"
+import { MouseEvent, useRef } from "react"
 
 const EditInfo = () => {
 
+  const formRef = useRef<HTMLFormElement>(null)
 
   async function handleClick(e:MouseEvent) {
     e.preventDefault()
@@ -14,14 +15,14 @@ const EditInfo = () => {
     const { error } = await supabase
     .from('Users')
     .insert({
-      first_name: "Abdulsalam",
-      last_name: "Jubril", 
-      email: "abdulsalamjubr3@gmail.com",
-      phone: "09072306028",
-      address: "41, Alhaji Oladipupo Street",
-      city: "Oko-Oba",
-      state: "Lagos",
-      country: "Nigeria"
+      first_name: formRef.current?.element.firstname.value,
+      last_name: formRef.current?.element.lastname.value, 
+      email: formRef.current?.element.email.value,
+      phone: formRef.current?.element.phone.value,
+      address: formRef.current?.element.address.value,
+      city: formRef.current?.element.city.value,
+      state: formRef.current?.element.state.value,
+      country: formRef.current?.element.country.value
     })
 
   if (error) {
@@ -29,11 +30,12 @@ const EditInfo = () => {
     console.log(error)
   }
 
+    console.log()
   }
 
   return (
-    <Constraint className="my-25" size="960px">
-      <form className="grid grid-cols-2 gap-4">
+    <Constraint className="py-10 min-[1000px]:py-20" size="960px">
+      <form ref={formRef} className="grid grid-cols-2 gap-4">
         <p className="col-span-full text-xl text-btn-2 font-medium">Personal Information</p>
         <FormInput name="firstname" type="text" label="First Name" />
         <FormInput name="lastname" type="text" label="Last Name" />

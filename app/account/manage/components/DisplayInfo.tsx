@@ -4,6 +4,7 @@ import { createClient } from "@/utils/supabase/client"
 import DisplayClient from "./DisplayClient"
 import { useEffect, useState } from "react"
 import EditInfo from "./EditInfo"
+import Loading from "@/components/Loading"
 
 type DataType = {
     first_name: string,
@@ -35,7 +36,7 @@ const DisplayInfo = () => {
     }, [])
 
     if (loading) {
-        return <p>Loading component</p>
+        return <Loading />
     }
 
     return userData ? <DisplayClient userData={userData} /> : <EditInfo />
