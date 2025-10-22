@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from "react"
-import EditInfo from "./EditInfo"
+import InputInfo from "./InputInfo"
 import DisplayInfo from "./DisplayInfo"
 
 const Manage = () => {
@@ -10,7 +10,7 @@ const Manage = () => {
 
   return (
     <main>
-        {editState ? <EditInfo /> : <DisplayInfo /> }
+        {editState ? <InputInfo editStage={editState}  /> : <DisplayInfo switchMode={[editState, setEditState]} /> }
     </main>
   )
 }

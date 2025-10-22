@@ -1,4 +1,5 @@
 import Constraint from "@/components/Constraint"
+import { Dispatch, SetStateAction } from "react"
 
 type DataType = {
     first_name: string,
@@ -11,14 +12,18 @@ type DataType = {
     country: string
 }
 
-const DisplayClient = ({ userData }: {userData: DataType}) => {
+const DisplayClient = ({ userData, switchMode }: {userData: DataType, switchMode:[boolean, Dispatch<SetStateAction<boolean>>]}) => {
+
+    function handleClick() {
+        switchMode[1](true)
+    }
 
   return (
     <div className="bg-gray-50 py-10 min-[1000px]:py-20">
         <Constraint size="960px">
-            <div>
-                <h1 className="mb-5 font-semibold text-xl">Account Overview</h1>
-                <button></button>
+            <div className="mb-4 flex justify-between items-center">
+                <h1 className="font-semibold text-xl">Account Overview</h1>
+                <button onClick={handleClick} className="block bg-btn-2 text-white px-6 py-2.5 rounded-md hover:bg-btn-1 hover:text-gray-900 hover:cursor-pointer">Edit Info</button>
             </div>
             <div className="bg-white p-4 rounded-lg mb-10 shadow-md border border-gray-100">
                 <h2 className="text-lg text-btn-3 font-medium border-b border-gray-100 pb-2 mb-4">Personal Information</h2>
@@ -37,7 +42,7 @@ const DisplayClient = ({ userData }: {userData: DataType}) => {
                     </div>
                     <div>
                         <span className="text-[14px] text-gray-700">Phone</span>
-                        <p className="text-btn-2">{`(+234) ${userData.phone}`}</p>
+                        <p className="text-btn-2">{userData.phone}</p>
                     </div>
                 </div>
             </div>

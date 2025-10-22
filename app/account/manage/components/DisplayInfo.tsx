@@ -3,8 +3,9 @@
 import { createClient } from "@/utils/supabase/client"
 import DisplayClient from "./DisplayClient"
 import { useEffect, useState } from "react"
-import EditInfo from "./EditInfo"
+import EditInfo from "./InputInfo"
 import Loading from "@/components/Loading"
+import { Dispatch, SetStateAction } from "react"
 
 type DataType = {
     first_name: string,
@@ -17,7 +18,7 @@ type DataType = {
     country: string
 }
 
-const DisplayInfo = () => {
+const DisplayInfo = ({ switchMode }: {switchMode: [boolean, Dispatch<SetStateAction<boolean>>]}) => {
 
     const [userData, setUserData] = useState<DataType | null>(null)
     const [loading, setLoading] = useState(true)
@@ -39,7 +40,7 @@ const DisplayInfo = () => {
         return <Loading />
     }
 
-    return userData ? <DisplayClient userData={userData} /> : <EditInfo />
+    return userData ? <DisplayClient userData={userData} switchMode={switchMode} /> : <EditInfo />
 }
 
 export default DisplayInfo
