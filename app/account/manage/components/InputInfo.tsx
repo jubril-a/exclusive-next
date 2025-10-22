@@ -13,7 +13,6 @@ const InputInfo = ({ editStage=false }: {editStage?: boolean}) => {
   useEffect(() => {
     const getMail = async () => {
       const supabase = await createClient()
-      const { data: { user } } = await supabase.auth.getUser()
 
       if (editStage) {
         const { data, error } = await supabase.from('Users')
@@ -23,6 +22,7 @@ const InputInfo = ({ editStage=false }: {editStage?: boolean}) => {
           const userData = data[0]
           const fname = (formRef.current.elements.namedItem('firstname') as HTMLInputElement)
           const lname = (formRef.current?.elements.namedItem('lastname') as HTMLInputElement)
+          const emailField = (formRef.current.elements.namedItem('email') as HTMLInputElement)
           const phone = (formRef.current?.elements.namedItem('phone') as HTMLInputElement)
           const address = (formRef.current?.elements.namedItem('address') as HTMLInputElement)
           const city = (formRef.current?.elements.namedItem('city') as HTMLInputElement)
@@ -31,18 +31,14 @@ const InputInfo = ({ editStage=false }: {editStage?: boolean}) => {
 
           fname.value = userData['first_name']
           lname.value = userData['last_name']
+          emailField.value = userData['email']
+          emailField.disabled = true
           phone.value = userData['phone']
           address.value = userData['address']
           city.value = userData['city']
           state.value = userData['state']
           country.value = userData['country']
         }
-      }
-
-      if (formRef.current && user?.email) {
-        const emailField = (formRef.current.elements.namedItem('email') as HTMLInputElement)
-        emailField.value = user.email
-        emailField.disabled = true
       }
 
       setLoading(false)
