@@ -12,7 +12,7 @@ const Footer = () => {
                 <h3 className="mb-4 text-base text-white">Support</h3>
                 <p className="mb-3">111 Bijoy sarani, Dhaka,<br />  DH 1515, Bangladesh.</p>
                 <p className="mb-3">exclusive@gmail.com</p>
-                <p>+88015-88888-9999</p>
+                <p>+234 907 2306 028</p>
             </div>
             <div>
                 <h3 className="mb-4 text-base text-white">Account</h3>
@@ -45,7 +45,7 @@ const Footer = () => {
                 </div>
             </div>
         </Constraint>
-        <p className="text-center py-4 border-t border-gray-700 border-dashed">&copy; Copyright Rimel 2022. All right reserved</p>
+        <p className="text-center py-4 border-t border-gray-700 border-dashed">&copy; JubrilAbdul 2025. All right reserved</p>
     </footer>
   )
 }

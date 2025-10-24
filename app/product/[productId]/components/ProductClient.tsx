@@ -1,9 +1,12 @@
+'use client'
+
 import ProductDisplay from "./ProductDisplay"
 import ProductScroller from "@/components/ProductScroller"
-import Footer from "@/components/Footer"
+import { ProductContext } from "@/app/productContext"
 
 type Props = {
   data: {
+    _id: string,
     productName: string,
     imageUrl: string,
     price: number,
@@ -15,10 +18,11 @@ type Props = {
 }
 
 export default function ProductClient({ data }: Props) {
+
   return (
-    <>
-        <ProductDisplay {...data} />
+    <ProductContext.Provider value={data}>
+        <ProductDisplay />
         <ProductScroller type="category" heading="You Might Also Like" subheading={"Related Items"} category={data.categorySlug}  />
-    </>
+    </ProductContext.Provider>
   )
 }

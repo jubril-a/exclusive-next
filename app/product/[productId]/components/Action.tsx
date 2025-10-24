@@ -1,14 +1,17 @@
 'use client'
 
-import Counter from "./Counter"
+import Counter from "../../../../components/Counter"
 import {
     HeartIcon,
 } from "@heroicons/react/24/outline"
 import { cn } from "@/utils/cn"
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { ProductContext } from "@/app/productContext"
+import { createClient } from "@/utils/supabase/client"
 
-const Action = ({stock}: {stock: number}) => {
+const Action = () => {
     const [isFavorite, setIsFavorite] = useState(false)
+    const { stock } = useContext(ProductContext)
 
     function addToWishList() {
         setIsFavorite(true)

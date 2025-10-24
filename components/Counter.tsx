@@ -6,7 +6,7 @@ import AlertBox from "@/components/AlertBox"
 
 type Props = {
   stock: number,
-  className: string
+  className?: string
 }
 
 const Counter = ({stock, className}: Props) => {
@@ -57,9 +57,9 @@ const Counter = ({stock, className}: Props) => {
        className
       )}>
         {showAlert && <AlertBox {...alertContent.current} onClose={() => {setShowAlert(false)}} />}
-        <button onClick={decrement} className="py-2 px-5 bg-btn-2 hover:bg-btn-3 cursor-pointer text-white">-</button>
-        <input ref={counterRef} onBlur={checkStock} type="text" defaultValue="1" className="text-center p-2 border-x border-gray-400 w-[80px]" />
-        <button onClick={increment} className="py-2 px-5 bg-btn-2 hover:bg-btn-3 cursor-pointer text-white">+</button>
+        <button onClick={decrement} className="py-1 px-3 bg-btn-2 hover:bg-btn-3 cursor-pointer text-white">-</button>
+        <input ref={counterRef} onBlur={checkStock} type="text" defaultValue="1" className="text-center p-2 border-x border-gray-400 w-[50px]" />
+        <button onClick={increment} className="py-1 px-3 bg-btn-2 hover:bg-btn-3 cursor-pointer text-white">+</button>
     </div>
   )
 }

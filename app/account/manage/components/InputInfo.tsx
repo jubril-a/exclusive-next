@@ -52,7 +52,7 @@ const InputInfo = ({ editStage=false }: {editStage?: boolean}) => {
     e.preventDefault()
     const supabase = await createClient()
     const { error } = await supabase
-    .from('Users')
+    .from('users')
     .upsert({
       first_name: (formRef.current?.elements.namedItem('firstname') as HTMLInputElement)?.value,
       last_name: (formRef.current?.elements.namedItem('lastname') as HTMLInputElement)?.value,

@@ -29,7 +29,7 @@ const ScrollerClient = ({ categoryId, heading, subheading, data }:Props) => {
     <scrollerContext.Provider value={scrollerRef}>
       <Section id={categoryId}>
         <SectionHeading subheading={subheading} heading={heading} />
-        <div ref={scrollerRef} className="flex gap-4 overflow-scroll scrollbar-hidden">
+        <div ref={scrollerRef} className="flex gap-4 overflow-scroll scrollbar-hidden mb-20">
           {data.map((product: ProductType) => (
             <ProductCard
               key={product.productName}

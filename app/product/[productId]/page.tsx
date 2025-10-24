@@ -6,6 +6,7 @@ export default async function page({ params }: { params: {productId: string}}) {
   const { productId } = await params
   const query = `
     *[_type == "product"][_id == "${productId}"]{
+      _id,
       productName,
       price,
       discount,
