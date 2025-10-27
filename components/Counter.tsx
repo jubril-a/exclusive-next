@@ -1,8 +1,9 @@
 'use client'
 
 import { cn } from "@/utils/cn"
-import { useRef, useState } from "react"
+import { useRef, useState, useContext } from "react"
 import AlertBox from "@/components/AlertBox"
+import { quantityContext } from "@/app/quantityContext"
 
 type Props = {
   stock: number,
@@ -14,11 +15,13 @@ const Counter = ({stock, className}: Props) => {
   const [showAlert, setShowAlert] = useState(false)
   const alertContent = useRef({heading: "", message: ""})
   const counterRef = useRef<HTMLInputElement>(null)
+  const { quantity, setQuantity } = useContext(quantityContext)
 
   function increment() {
     let quantity = Number(counterRef.current?.value)
 
     if (counterRef.current && quantity < stock) {
+      setQuantity(quantity + 1)
       counterRef.current.value = String(quantity + 1)
     }
     
@@ -32,6 +35,7 @@ const Counter = ({stock, className}: Props) => {
     let quantity = Number(counterRef.current?.value)
 
     if (counterRef.current && quantity != 1) {
+      setQuantity(quantity - 1)
       counterRef.current.value = String(quantity - 1)
     }
     

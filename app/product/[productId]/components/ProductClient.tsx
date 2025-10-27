@@ -22,7 +22,7 @@ export default function ProductClient({ data }: Props) {
   return (
     <ProductContext.Provider value={data}>
         <ProductDisplay />
-        <ProductScroller type="category" heading="You Might Also Like" subheading={"Related Items"} category={data.categorySlug}  />
+        {/* <ProductScroller type="category" heading="You Might Also Like" subheading={"Related Items"} category={data.categorySlug}  /> */}
     </ProductContext.Provider>
   )
 }
