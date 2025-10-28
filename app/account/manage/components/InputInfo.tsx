@@ -11,11 +11,12 @@ const InputInfo = ({ editStage=false }: {editStage?: boolean}) => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+
     const getMail = async () => {
       const supabase = await createClient()
 
       if (editStage) {
-        const { data, error } = await supabase.from('Users')
+        const { data, error } = await supabase.from('users')
         .select("*")
 
         if (formRef.current && data) {
@@ -39,6 +40,15 @@ const InputInfo = ({ editStage=false }: {editStage?: boolean}) => {
           state.value = userData['state']
           country.value = userData['country']
         }
+      } else {
+        const { data: { user } } = await supabase.auth.getUser()
+
+        if (formRef.current && user && user.email) {
+          const emailField = (formRef.current.elements.namedItem('email') as HTMLInputElement)
+          emailField.value = user.email
+          emailField.disabled = true
+        }
+
       }
 
       setLoading(false)
@@ -84,7 +94,7 @@ const InputInfo = ({ editStage=false }: {editStage?: boolean}) => {
         <FormInput name="firstname" type="text" label="First Name" />
         <FormInput name="lastname" type="text" label="Last Name" />
 
-        <FormInput name="email" type="email" label="Email Address" />
+        <FormInput name="email" type="email" label="Email Address"/>
         <FormInput name="phone" type="phone" label="Phone" />
 
         <p className="mt-10 col-span-full text-xl text-btn-2 font-medium">Billing Information</p>

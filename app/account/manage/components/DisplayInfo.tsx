@@ -26,7 +26,7 @@ const DisplayInfo = ({ switchMode }: {switchMode: [boolean, Dispatch<SetStateAct
     useEffect(() => {
         const fetchData = async () => {
             const supabase = await createClient()
-            const { data, error } = await supabase.from('Users')
+            const { data, error } = await supabase.from('users')
             .select("*")
 
             if (data) {setUserData(data[0])}
