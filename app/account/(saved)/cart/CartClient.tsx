@@ -1,25 +1,22 @@
-'use client'
-
 import Constraint from "@/components/Constraint"
-import Product from "../components/Product"
-import Button from "@/components/Button"
+import CartItem from "../components/CartItem"
+import CartHead from "./CartHead"
 
-const CartClient = () => {
+type Props = {
+    data: { product_id: string; }[] | null
+}
 
-    function handleClick() {
-
-    }
+const CartClient = ({ data }: Props) => {
 
   return (
     <div className="bg-gray-50 py-10 min-[1000px]:py-20">
         <Constraint size="960px">
-            <div className="mb-4 flex justify-between items-center">
-                <h1 className="font-semibold text-xl">My Cart ()</h1>
-                <Button clickHandler={handleClick}>Check Out</Button>
-            </div>
+            <CartHead />
             <div className="bg-white p-4 rounded-lg mb-10 shadow-md border border-gray-100">
                 <div className="px-2 min-[480px]:px-10">
-                    <Product />
+                    {data?.map((cart_item) => (
+                        <CartItem key={cart_item.product_id} id={cart_item.product_id} />
+                    ))}
                 </div>
             </div>
         </Constraint>

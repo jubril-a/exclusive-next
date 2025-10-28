@@ -12,10 +12,9 @@ const CartButton = ({id}: {id: string}) => {
       const { data, error } = await supabase
         .from('cart')
         .select()
+        .eq("product_id", id)
 
-        if (data && data[0].product_id == id) {
-          return data[0].quantity
-        }
+        if (data && data[0]) return data[0].quantity
 
         return 0
     }

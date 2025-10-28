@@ -1,7 +1,7 @@
-import CartClient from "./CartClient"
+import Cart from "./Cart"
 
 const page = () => {
-  return <CartClient />
+  return <Cart />
 }
 
 export default page
