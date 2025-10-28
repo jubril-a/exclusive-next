@@ -6,11 +6,27 @@ const CartButton = ({id}: {id: string}) => {
 
     const {quantity, setQuantity} = useContext(quantityContext)
 
+    async function getQuantity() {
+      const supabase = await createClient()
+
+      const { data, error } = await supabase
+        .from('cart')
+        .select()
+
+        if (data && data[0].product_id == id) {
+          return data[0].quantity
+        }
+
+        return 0
+    }
+
     async function addToCart(e: React.MouseEvent) {
         const supabase = await createClient()
+        const prev_quantity = await getQuantity()
+
         const { error } = await supabase
         .from('cart')
-        .insert({ product_id: id, quantity: quantity })
+        .upsert({ product_id: id, quantity: prev_quantity + quantity }, { onConflict: 'product_id' })
 
         console.log(error)
     }
