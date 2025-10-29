@@ -6,16 +6,17 @@ type Props = {
   heading: string,
   subheading: string,
   category: string,
+  exclude?: string
 }
 
-export default async function ProductScroller({ type, heading, subheading, category }: Props) {
+export default async function ProductScroller({ type, heading, subheading, category, exclude }: Props) {
 
   let query = ""
 
   switch (type) {
     case 'category':
       query = `
-        *[_type == "product" && category->slug.current == "${category}"]{
+        *[_type == "product" && category->slug.current == "${category}" && _id != "${exclude}"]{
           _id,
           productName,
           price,
