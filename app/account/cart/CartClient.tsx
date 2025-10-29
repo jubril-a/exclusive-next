@@ -1,5 +1,5 @@
 import Constraint from "@/components/Constraint"
-import CartItem from "../components/CartItem"
+import CartItem from "./components/CartItem"
 import CartHead from "./CartHead"
 
 type Props = {
