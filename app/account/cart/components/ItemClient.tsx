@@ -14,7 +14,7 @@ type Props = {
   stock: number
 }
 
-const CartItemClient = ({ _id, productName, imageUrl, price, discount, stock }: Props) => {
+const ItemClient = ({ _id, productName, imageUrl, price, discount, stock }: Props) => {
 
   const [isInCart, setInCart] = useState(true)
 
@@ -42,4 +42,4 @@ const CartItemClient = ({ _id, productName, imageUrl, price, discount, stock }: 
   )
 }
 
-export default CartItemClient
+export default ItemClient

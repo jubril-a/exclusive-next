@@ -1,5 +1,5 @@
 import { client } from "@/utils/sanityClient"
-import CartItemClient from "./CartItemClient"
+import CartItemClient from "./ItemClient"
 
 const CartItem = async ({id}: {id: string}) => {
 

@@ -2,13 +2,14 @@ import Section from "@/components/Section"
 import ProductCard from "@/components/ProductCard"
 
 type ProductType = {
-    imgUrl: string,
-    imgDescription: string,
-    productName: string,
-    price: number,
-    isDiscounted: boolean,
-    discount: number,
-    productId: string
+  _id: string,
+  imgUrl: string,
+  imgDescription: string,
+  productName: string,
+  price: number,
+  isDiscounted: boolean,
+  discount: number,
+  productId: string
 }
 
 const SearchClient = ({term, matchedProducts}: {term: string, matchedProducts: ProductType[]}) => {
@@ -20,6 +21,7 @@ const SearchClient = ({term, matchedProducts}: {term: string, matchedProducts: P
         <div className="flex gap-4 flex-wrap">
             {matchedProducts.map((product: ProductType) => (
                 <ProductCard
+                id={product._id}
                 key={product.productName}
                 imgUrl={product.imgUrl}
                 imgDescription={product.productName}
