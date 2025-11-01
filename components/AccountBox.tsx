@@ -1,6 +1,7 @@
 import Navlink from "./Navlink";
 import { createClient } from "@/utils/supabase/client"
 import UserName from "./UserName";
+import { useEffect, useState } from "react"
 
 export const LoggedOut = () => {
   return (
@@ -12,7 +13,27 @@ export const LoggedOut = () => {
   )
 }
 
+type DataType = {
+    first_name: string,
+    last_name: string, 
+}
+
 export const LoggedIn = () => {
+
+  const [userData, setUserData] = useState<DataType | null>(null)
+
+  useEffect(() => {
+    const fetchUser = async () => {
+
+        const supabase = await createClient()
+        const { data, error } = await supabase.from('users')
+        .select("first_name, last_name")
+
+        if (data) setUserData(data[0])
+    }
+
+    fetchUser()
+  }, [])
 
   const logout = async () => {
     const supabase = await createClient()
@@ -26,8 +47,9 @@ export const LoggedIn = () => {
   }
 
   return (
+    userData &&
     <div className="grid absolute top-full mt-3 max-[1340px]:right-0 min-[1340px]:left-1/2 min-[1340px]:-translate-x-1/2 bg-[rgba(0,0,0,0.4)] text-white p-3 backdrop-blur-2xl border border-[rgba(255,255,255,0.4)] rounded-md">
-      <UserName />
+      <UserName first_name={userData.first_name} last_name={userData.last_name} />
       <Navlink className="px-2 pb-3" href="/account/manage">Manage&nbsp;my&nbsp;Account</Navlink>
       <Navlink className="min-[400px]:hidden px-2 py-3" href="/account/cart">My&nbsp;Cart</Navlink>
       <Navlink className="px-2 py-3" href="/account/orders">My&nbsp;Orders</Navlink>

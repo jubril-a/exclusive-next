@@ -2,22 +2,30 @@
 
 import Button from "@/components/Button"
 import Counter from "@/components/Counter"
+import { removeFromCart } from "@/utils/data/supabase"
+import { useState } from "react"
 
 type Props = {
-    productName: string,
-    imageUrl: string,
-    price: number,
-    discount: number,
-    stock: number
+  _id: string,
+  productName: string,
+  imageUrl: string,
+  price: number,
+  discount: number,
+  stock: number
 }
 
-const CartItemClient = ({ productName, imageUrl, price, discount, stock }: Props) => {
+const CartItemClient = ({ _id, productName, imageUrl, price, discount, stock }: Props) => {
+
+  const [isInCart, setInCart] = useState(true)
 
   function handleClick() {
-    // TODO: Remove Item from Cart
+    const response = removeFromCart(_id)
+    // TODO: Handle response: remove item from dom or show error box
+    setInCart(false)
   }
 
   return (
+    isInCart &&
     <div className="py-4 border-b border-gray-100">
       <div className="min-[480px]:flex min-[480px]:justify-between items-center mb-4 min-[480px]:gap-8">
         <div className="flex gap-4 max-[480px]:mb-4 items-center">

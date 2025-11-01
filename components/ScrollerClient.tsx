@@ -33,6 +33,7 @@ const ScrollerClient = ({ categoryId, heading, subheading, data }:Props) => {
           {data.map((product: ProductType) => (
             <ProductCard
               key={product.productName}
+              id={product._id}
               imgUrl={product.imageUrl}
               imgDescription={product.productName}
               name={product.productName}
