@@ -1,5 +1,7 @@
-'use client'
+import Error from "./Error"
 
 export default function ErrorPage() {
-  return <p>Sorry, something went wrong</p>
+  return (
+    <Error />
+  )
 }

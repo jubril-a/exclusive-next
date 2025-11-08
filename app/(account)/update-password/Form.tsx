@@ -4,8 +4,11 @@ import FormInput from "../../../components/FormInput"
 import { createClient } from "@/utils/supabase/client"
 import { useRef } from "react"
 import { MouseEvent } from "react"
+import { useRouter } from "next/navigation"
 
 const Form = () => {
+
+    const router = useRouter()
 
     const formRef = useRef<HTMLFormElement>(null)
 
@@ -21,12 +24,10 @@ const Form = () => {
             })
 
             if (error) {
-                // TODO: Show Error Message
-                console.log("error", error)
+                router.push('/error')
             }
             if (data) {
-                // TODO: redirect to login page
-                console.log("data", data)
+                router.push('/login')
             }
         }  
     }
