@@ -2,18 +2,19 @@
 
 import FormInput from "../../../components/FormInput"
 import { createClient } from "@/utils/supabase/client"
-import { useRef } from "react"
-import { MouseEvent } from "react"
+import { useState, useRef, MouseEvent } from "react"
 import { useRouter } from "next/navigation"
+import Loading from "@/components/Loading"
 
 const Form = () => {
 
     const router = useRouter()
-
+    const [loading, setLoading] = useState(false)
     const formRef = useRef<HTMLFormElement>(null)
 
     async function initiateReset(e: MouseEvent<HTMLInputElement>) {
         e.preventDefault()
+        setLoading(true)
         const supabase = await createClient()
 
         if (formRef.current) {
@@ -34,6 +35,7 @@ const Form = () => {
 
   return (
     <form ref={formRef} className="grid gap-6">
+        {loading && <div className="relative flex justify-center"><Loading className="absolute" /></div>}
         <FormInput name="password" type="password" label="New Password" />
         <input onClick={(e) => initiateReset(e)} className="bg-btn-1 rounded-md hover:bg-btn-2 hover:text-white mb-8 py-3 cursor-pointer" type="submit" value="Reset Password" />  
     </form>
