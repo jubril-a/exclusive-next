@@ -2,6 +2,8 @@
 
 import { ShoppingCartIcon } from "@heroicons/react/24/outline"
 import { addToCart } from "@/utils/data/supabase"
+import AlertBox from "./AlertBox"
+import { useState } from "react"
 
 type Props = {
   id: string,
@@ -11,19 +13,33 @@ type Props = {
   price: number,
   isDiscounted: boolean,
   discount: number,
-  productId: string
 }
 
-const ProductCard = ({id, imgUrl, imgDescription, name, price, isDiscounted, discount, productId}: Props) => {
+type alertType = {
+  state: "Success" | "Error",
+  message: string
+}
+
+const ProductCard = ({id, imgUrl, imgDescription, name, price, isDiscounted, discount}: Props) => {
+
+  const [alertState, setAlertState] = useState<false | alertType>(false);
 
   function handleClick() {
-    const response = addToCart(id, 1)
-    // TODO: show error/success message on response resolve
+   addToCart(id, 1).then((response) => {
+
+    if (response == "success") {
+      setAlertState({state: "Success", message: `A unit of ${name} added to cart.`})
+    } else {
+      setAlertState({state: "Error", message: `Make sure you are logged in then try again.`})
+    }
+
+   })
   }
 
   return (
     <div className="relative border border-gray-200 p-2 pb-4 rounded-lg w-fit">
-      <a className="absolute inset-0 z-2" href={`/product/${productId}`}></a>
+      {alertState && <AlertBox heading={alertState.state} message={alertState.message} onClose={() => setAlertState(false)} />}
+      <a className="absolute inset-0 z-2" href={`/product/${id}`}></a>
       <div className="relative flex justify-center rounded-lg items-center w-60 h-60 bg-gray-200">
           {discount != 0 && <span className="absolute top-2 left-2 bg-btn-2 text-white px-2 py-1 rounded-md inline-block text-sm">-{discount}%</span>}
           <div className="absolute z-3 right-2 top-2 grid gap-1">

@@ -9,7 +9,6 @@ type ProductType = {
   price: number,
   isDiscounted: boolean,
   discount: number,
-  productId: string
 }
 
 const SearchClient = ({term, matchedProducts}: {term: string, matchedProducts: ProductType[]}) => {
@@ -29,7 +28,6 @@ const SearchClient = ({term, matchedProducts}: {term: string, matchedProducts: P
                 price={product.price}
                 isDiscounted={true}
                 discount={product.discount}
-                productId={product.productId}
             />
             ))}
         </div>

@@ -20,7 +20,6 @@ const ItemClient = ({ _id, productName, imageUrl, price, discount, stock }: Prop
 
   function handleClick() {
     const response = removeFromCart(_id)
-    // TODO: Handle response: remove item from dom or show error box
     setInCart(false)
   }
 
