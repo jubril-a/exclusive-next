@@ -40,7 +40,6 @@ const ScrollerClient = ({ categoryId, heading, subheading, data }:Props) => {
               price={product.price}
               isDiscounted={true}
               discount={product.discount}
-              productId={product._id}
           />
           ))}
         </div>
