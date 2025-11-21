@@ -4,7 +4,7 @@ import FormInput from "../../../components/FormInput"
 import { createClient } from "@/src/utils/supabase/client"
 import { useState, useRef, MouseEvent } from "react"
 import { useRouter } from "next/navigation"
-import Loading from "@/components/Loading"
+import Loading from "@/src/components/Loading"
 
 const Form = () => {
 

@@ -1,5 +1,5 @@
 import { ProductContext } from "@/src/app/productContext"
-import Rating from "@/components/Rating"
+import Rating from "@/src/components/Rating"
 import { useContext } from "react"
 
 const ProductInfo = () => {

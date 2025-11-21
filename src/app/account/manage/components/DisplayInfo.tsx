@@ -4,7 +4,7 @@ import { createClient } from "@/src/utils/supabase/client"
 import DisplayClient from "./DisplayClient"
 import { useEffect, useState } from "react"
 import EditInfo from "./InputInfo"
-import Loading from "@/components/Loading"
+import Loading from "@/src/components/Loading"
 import { Dispatch, SetStateAction } from "react"
 
 type DataType = {

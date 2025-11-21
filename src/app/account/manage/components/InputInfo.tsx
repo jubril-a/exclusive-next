@@ -1,9 +1,9 @@
 'use client'
 
 import { createClient } from "@/src/utils/supabase/client"
-import FormInput from "@/components/FormInput"
-import Constraint from "@/components/Constraint"
-import Loading from "@/components/Loading"
+import FormInput from "@/src/components/FormInput"
+import Constraint from "@/src/components/Constraint"
+import Loading from "@/src/components/Loading"
 import { MouseEvent, useRef, useEffect, useState } from "react"
 
 const InputInfo = ({ editStage=false }: {editStage?: boolean}) => {

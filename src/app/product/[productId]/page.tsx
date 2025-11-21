@@ -1,6 +1,6 @@
 import { client } from "@/src/utils/sanityClient"
 import ProductClient from "./components/ProductClient"
-import ProductScroller from "@/components/ProductScroller"
+import ProductScroller from "@/src/components/ProductScroller"
 
 export default async function page({ params }: { params: {productId: string}}) {
 

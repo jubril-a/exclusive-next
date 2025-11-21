@@ -1,6 +1,6 @@
 'use client'
 
-import Section from "@/components/Section"
+import Section from "@/src/components/Section"
 import ProductInfo from "./ProductInfo"
 import Action from "./Action"
 import Perks from "./Perks"

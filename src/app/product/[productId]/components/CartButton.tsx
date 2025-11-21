@@ -1,7 +1,7 @@
 import { quantityContext } from "@/src/app/quantityContext"
 import { useContext, useState } from "react"
 import { addToCart } from "@/src/utils/data/supabase"
-import AlertBox from "@/components/AlertBox"
+import AlertBox from "@/src/components/AlertBox"
 
 type alertType = {
   state: "Success" | "Error",

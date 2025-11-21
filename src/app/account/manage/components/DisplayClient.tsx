@@ -1,4 +1,4 @@
-import Constraint from "@/components/Constraint"
+import Constraint from "@/src/components/Constraint"
 import { Dispatch, SetStateAction } from "react"
 
 type DataType = {
