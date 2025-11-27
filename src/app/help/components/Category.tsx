@@ -14,25 +14,14 @@ type Props = {
 
 const Category = ({ label, imgUrl, ref, currentCategory, changeCategory }:Props) => {
 
-  function scrollToSection(element: HTMLDivElement | null, headerOffset: number) {
-    if (!element) return;
-    
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
-
   function handleClick() {
     changeCategory(label as CategoryType)
 
-    const headerOffset = 120
     const element = ref.current
-
-    scrollToSection(element, headerOffset)
+    if (!element) return;
+    
+    const offsetPosition = element.getBoundingClientRect().top + window.pageYOffset - 120;
+    window.scrollTo({ top: offsetPosition, behavior: "smooth"});
   }
 
   return (
