@@ -4,7 +4,7 @@ import Section from "@/src/components/Section"
 import ProductInfo from "./ProductInfo"
 import Action from "./Action"
 import Perks from "./Perks"
-import { ProductContext } from "@/src/app/productContext"
+import { ProductContext } from "@/src/contexts/productContext"
 
 type Props = {
   data: {

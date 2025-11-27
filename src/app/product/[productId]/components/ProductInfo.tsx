@@ -1,4 +1,4 @@
-import { ProductContext } from "@/src/app/productContext"
+import { ProductContext } from "@/src/contexts/productContext"
 import Rating from "@/src/components/Rating"
 import { useContext } from "react"
 

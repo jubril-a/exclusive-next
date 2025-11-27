@@ -1,4 +1,4 @@
-import { quantityContext } from "@/src/app/quantityContext"
+import { quantityContext } from "@/src/contexts/quantityContext"
 import { useContext, useState } from "react"
 import { addToCart } from "@/src/utils/data/supabase"
 import AlertBox from "@/src/components/AlertBox"

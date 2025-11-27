@@ -4,8 +4,8 @@ import Counter from "../../../../components/Counter"
 import { cn } from "@/src/utils/cn"
 import { useState, useContext } from "react"
 import CartButton from "./CartButton"
-import { ProductContext } from "@/src/app/productContext"
-import { quantityContext } from "@/src/app/quantityContext"
+import { ProductContext } from "@/src/contexts/productContext"
+import { quantityContext } from "@/src/contexts/quantityContext"
 
 const Action = () => {
     const { _id, stock } = useContext(ProductContext)

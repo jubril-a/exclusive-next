@@ -3,7 +3,7 @@
 import { cn } from "@/src/utils/cn"
 import { useRef, useState, useContext } from "react"
 import AlertBox from "./AlertBox"
-import { quantityContext } from "@/src/app/quantityContext"
+import { quantityContext } from "@/src/contexts/quantityContext"
 
 type Props = {
   stock: number,

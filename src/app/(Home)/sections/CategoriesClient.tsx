@@ -3,7 +3,7 @@
 import Section from "@/src/components/Section"
 import SectionHeading from "@/src/components/SectionHeading"
 import CategoryBox from "../components/CategoryBox"
-import { scrollerContext } from "@/src/app/scrollerContext"
+import { scrollerContext } from "@/src/contexts/scrollerContext"
 import { useRef } from "react"
 
 type Category = {

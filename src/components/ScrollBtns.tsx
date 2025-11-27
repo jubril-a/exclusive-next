@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { scrollerContext } from "@/src/app/scrollerContext"
+import { scrollerContext } from "@/src/contexts/scrollerContext"
 
 import {
     ArrowLeftIcon,

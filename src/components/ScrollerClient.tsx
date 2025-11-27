@@ -4,7 +4,7 @@ import SectionHeading from "./SectionHeading"
 import Section from "./Section"
 import ProductCard from "./ProductCard"
 import { useRef } from "react"
-import { scrollerContext } from "@/src/app/scrollerContext"
+import { scrollerContext } from "@/src/contexts/scrollerContext"
 
 type Props = {
   categoryId: string,

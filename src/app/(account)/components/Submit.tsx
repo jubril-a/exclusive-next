@@ -22,7 +22,7 @@ const Submit = ({action}: Props) => {
         <Loading />
       </div>
       }
-      <input onClick={() => setLoading(true)} className="bg-btn-1 rounded-md hover:bg-btn-2 hover:text-white mb-8 py-3 cursor-pointer" type="submit" value={labels[action]} />  
+      <input onClick={() => setLoading(true)} className="bg-btn-1 rounded-md hover:bg-btn-2 hover:text-white mb-8 py-3 cursor-pointer" type="submit" value={labels[action]} />
     </>
   )
 }
